@@ -18,10 +18,12 @@ $(document).ready(function(){
 
 
   function updateDisplay(){
-    var thing  = $(this).text();
-    display.append(thing);
-    console.log(thing);
-  }
+      var input = $(this).text();
+      var number = parseFloat(input);
+      display.append(input);
+      console.log(number);
+    }
+
 
   function divide(){
 
