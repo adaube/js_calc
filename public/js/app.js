@@ -18,11 +18,16 @@ $(document).ready(function(){
 
 
   function updateDisplay(){
-      var input = $(this).text();
-      var number = parseFloat(input);
-      display.append(input);
-      console.log(number);
-    }
+      var numVal = $(this).text();
+      if (display.text() === '0'){
+        display.text(numVal);
+      }else if (display.text().length < 8) {
+        display.text(display.text() + numVal);
+      }else{
+        display.text(display.text());
+      }
+      console.log(display.text().length);
+  }
 
 
   function divide(){
