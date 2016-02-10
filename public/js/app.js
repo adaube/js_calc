@@ -1,6 +1,6 @@
 $(document).ready(function(){
   var calculator = Object.create(Calculator);
-  var $display = $('#display');
+  var display = $('#display');
   var lastOperation = '';
 
 
@@ -18,13 +18,11 @@ $(document).ready(function(){
 
 
   function updateDisplay(){
-     var thing  = $(this).text();
-     console.log(thing);
+    var thing  = $(this).text();
+    display.append(thing);
+    console.log(thing);
   }
-  function updateDisplay(){
-    $display.text.$('.num');
-    console.log(this);
-  }
+
   function divide(){
 
   }
