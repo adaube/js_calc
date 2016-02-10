@@ -17,32 +17,36 @@ $(document).ready(function(){
   $('mem-clear').on('click', memClear);
 
 
-
   function updateDisplay(){
-    
+     var thing  = $(this).text();
+     console.log(thing);
+  }
+  function updateDisplay(){
+    $display.text.$('.num');
+    console.log(this);
   }
   function divide(){
-    
+
   }
 
   function multiply(){
-    
+
   }
 
   function subtract(){
-    
+
   }
 
   function equal(){
-    
+
   }
 
   function plus(){
-    
+
   }
 
   function clear(){
-    
+
   }
 
   function memAdd(){
@@ -58,7 +62,7 @@ $(document).ready(function(){
   }
 
   function memDisplay(){
-    
+
   }
 
 
