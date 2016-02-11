@@ -25,8 +25,8 @@ img {
 
 #content{
   background-color: #a39e94;
-  margin: 45px;
-  padding: 15px;
+  margin: 15px;
+  padding: 25px;
   border: 5px inset #111;
 /*Sourced from http://www.cssmatic.com/box-shadow  */
   -webkit-box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
@@ -81,7 +81,7 @@ img {
 .operator {
   background-color: #98a4a6;
   color: #edc233;
-  border: 1px ridge #FF4A00;
+  border: 1px ridge #000000;
 }
 
 .num {
@@ -102,10 +102,11 @@ img {
 /*Batman logo credit to http://codepen.io/damienpm/*/
 
 #batman {
+  z-index: -1;
   position: absolute;;
   left: 50%;
   top: 50%;
-  margin: -20px 0px 0px -175px;
+  margin: 85px 0px 0px -175px;
   width: 350px;
   height: 200px;
   background-color: #111;

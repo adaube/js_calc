@@ -70,10 +70,10 @@ function(){
 });
 
 // Scripting for image loading
-
-var image = document.images[0];
-var downloadingImage = new Image();
-downloadingImage.onload = function(){
-    image.src = this.src;
-};
-downloadingImage.src = "../images/The-Lego-Movie.jpg";
+//
+// var image = document.images[0];
+// var downloadingImage = new Image();
+// downloadingImage.onload = function(){
+//     image.src = this.src;
+// };
+// downloadingImage.src = "../images/The-Lego-Movie.jpg";
