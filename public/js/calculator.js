@@ -7,8 +7,10 @@ var Calculator = {
   divide: divide,
   result: result,
   reset: reset,
-  addToMemory: addToMemory,
-  subtractFromMemory: subtractFromMemory,
+  memAdd: memAdd,
+  memSub: memSub,
+  memClear: memClear,
+  memDisplay: memDisplay,
 }
 
 function add(num){
@@ -35,18 +37,18 @@ function reset(num){
   this.current = 0;
 }
 
-function addToMemory(num){
+function memAdd(num){
   this.memory += num;
 }
 
-function subtractFromMemory(num){
+function memSub(num){
   this.memory -= num;
 }
 
-function clearMemory(){
+function memClear(){
   this.memory = 0;
 }
 
-function getMemory(){
+function memDisplay(){
   return this.memory;
 }

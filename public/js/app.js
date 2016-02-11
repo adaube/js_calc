@@ -11,10 +11,10 @@ $(document).ready(function() {
   $('#multiply').on('click', multiply);
   $('#divide').on('click', divide);
   $('.num').on('click', updateDisplay);
-  $('mem-plus').on('click', memAdd);
-  $('mem-minus').on('click', memSub);
-  $('mem-recall').on('click', memDisplay);
-  $('mem-clear').on('click', memClear);
+  $('#mem-plus').on('click', memAdd);
+  $('#mem-minus').on('click', memSub);
+  $('#mem-recall').on('click', memDisplay);
+  $('#mem-clear').on('click', memClear);
 
 
   function updateDisplay() {
@@ -64,6 +64,10 @@ $(document).ready(function() {
       calculator.subtract(num);
     } else if (lastOperation === 'divide') {
       calculator.divide(num);
+    } else if (lastOperation === 'memAdd') {
+      calculator.memAdd(num);
+    } else if (lastOperation === 'memSub') {
+      calculator.memSub(num);
     }
     var result = calculator.result();
     display.text(result);
@@ -82,25 +86,36 @@ $(document).ready(function() {
   function clear() {
     calculator.reset();
     display.text(0);
-    lastOperation = '';
+    lastOperation = 'clear';
   }
 
   function memAdd() {
-
+    var disText = display.text();
+    var num = parseFloat(disText);
+    calculator.memAdd(num);
+    display.text(0);
+    lastOperation = 'memAdd';
   }
 
   function memSub() {
-
+    var disText = display.text();
+    var num = parseFloat(disText);
+    calculator.memAdd(num);
+    display.text(0);
+    lastOperation = 'memSub';
   }
 
   function memClear() {
-
+    calculator.memClear();
+    display.text(0);
+    lastOperation = 'memClear';
   }
 
   function memDisplay() {
+    calculator.memDisplay();
 
+    display.text(memory)
+    lastOperation = 'memDisplay';
   }
-
-
 
 });

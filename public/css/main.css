@@ -1,47 +1,63 @@
-.row {
-  width: 90%;
-  margin: 5px;
+body {
+  background-color: #98a4a6;
+}
+
+container {
+  box-sizing: border-box;
+  text-align: center;
 }
 
 #content{
+  background-color: #a39e94;
+  margin: 20px;
+  padding: 20px;
+  border: 2px solid #111;
+/*Sourced from http://www.cssmatic.com/box-shadow  */
+  -webkit-box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
+  -moz-box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
+  box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
 }
 
 #calculator-body {
-  background-color: tan;
-  width: 300px;
+  width: 22em;
+  padding: 10px;
+  background-color: #303030;
+  border: 2px ridge yellow;
 }
 
 #display {
+  width: inherit;
   font-family: Arial, sans-serif;
   font-size: 3em;
   background-color: white;
   text-align: right;
-  width: 240px;
-  padding: 5px;
+}
+
+.row {
 }
 
 .key {
-  margin-left: 8px;
-  margin-right: 8px;
-  width: 40px;
+  width: 22.5%;
 }
 
 .operator {
-  background-color: #0021A5;
+  background-color: #0060A8;
   color: #FF4A00;
-
+  border: 1px ridge #FF4A00;
 }
 
 .num {
-  background-color: #FF4A00;
-  color: #0021A5;
+  background-color: #edc233;
+  color: #000000;
+  border: 1px ridge #0021A5;
 }
 
 #equal{
-  width: 224px;
+  width: 100%;
 }
 #end {
   font-weight: bold;
   width: 50%;
   text-align: center;
+  padding: 10px;
 }
