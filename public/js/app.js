@@ -5,7 +5,7 @@ $(document).ready(function(){
 
 
   $('#clear').on('click', clear);
-  $('#add').on('click', plus);
+  $('#add').on('click', add);
   $('#equal').on('click', equal);
   $('#subtract').on('click', subtract);
   $('#multiply').on('click', multiply);
@@ -26,48 +26,63 @@ $(document).ready(function(){
       }else{
         display.text(display.text());
       }
-      console.log(display.text);
-  }
+    }
 
 
   function divide(){
-    console.log(result);
-    // var divideInput = parseFloat(display.text());
-    // display = 0;
-    // updateDisplay(display.text);
-    // var divideInputTwo = parseFloat(display.text);
-    // updateDisplay(divide(divideInputTwo));
+    var disText = display.text();
+    var num = parseFloat(disText);
+    calculator.add(num);
+    display.text(0);
+    lastOperation = 'divide';
   }
 
   function multiply(){
-
+    var disText = display.text();
+    var num = parseFloat(disText);
+    calculator.add(num);
+    display.text(0);
+    lastOperation = 'multiply';
   }
 
   function subtract(){
-
+    var disText = display.text();
+    var num = parseFloat(disText);
+    calculator.add(num);
+    display.text(0);
+    lastOperation = 'subtract';
   }
 
   function equal(){
     var disText = display.text();
     var num = parseFloat(disText);
-    if ( lastOperation === '+' ){
+    if ( lastOperation === 'multiply' ){
+      calculator.multiply(num);
+    }else if ( lastOperation === 'add' ) {
       calculator.add(num);
-      var result = calculator.result();
-      display.text(result);
-      calculator.reset();
-    }
+    }else if ( lastOperation === 'subtract' ) {
+      calculator.subtract(num);
+    }else if ( lastOperation === 'divide' ) {
+      calculator.divide(num);
   }
+    var result = calculator.result();
+    display.text(result);
+    console.log(result);
+    calculator.reset();
+    }
 
-  function plus(){
+  function add(){
     var disText = display.text();
     var num = parseFloat(disText);
     calculator.add(num);
     display.text(0);
-    lastOperation = '+';
+    lastOperation = 'add';
   }
 
   function clear(){
-
+    calculator.reset();
+    display.text(0);
+    lastOperation = '';
   }
 
   function memAdd(){
