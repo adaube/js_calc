@@ -64,11 +64,11 @@ $(document).ready(function() {
       calculator.subtract(num);
     } else if (lastOperation === 'divide') {
       calculator.divide(num);
-    } else if (lastOperation === 'memAdd') {
-      calculator.memAdd(num);
-    } else if (lastOperation === 'memSub') {
-      calculator.memSub(num);
-    }
+    // } else if (lastOperation === 'memAdd') {
+    //   calculator.memAdd(num);
+    // } else if (lastOperation === 'memSub') {
+    //   calculator.memSub(num);
+    // }
     var result = calculator.result();
     display.text(result);
     console.log(result);
@@ -90,11 +90,15 @@ $(document).ready(function() {
   }
 
   function memAdd() {
+    var mem = calculator.memory();
     var disText = display.text();
-    var num = parseFloat(disText);
-    calculator.memAdd(num);
-    display.text(0);
-    lastOperation = 'memAdd';
+    mem += parseFloat(disText);
+    calculator.memDisplay();
+    // var disText = display.text();
+    // var num = parseFloat(disText);
+    // calculator.memAdd(num);
+    // display.text(0);
+    // lastOperation = 'memAdd';
   }
 
   function memSub() {
@@ -113,7 +117,6 @@ $(document).ready(function() {
 
   function memDisplay() {
     calculator.memDisplay();
-
     display.text(memory)
     lastOperation = 'memDisplay';
   }
