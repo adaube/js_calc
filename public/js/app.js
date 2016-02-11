@@ -5,7 +5,7 @@ $(document).ready(function(){
 
 
   $('#clear').on('click', clear);
-  $('#plus').on('click', plus);
+  $('#add').on('click', plus);
   $('#equal').on('click', equal);
   $('#subtract').on('click', subtract);
   $('#multiply').on('click', multiply);
@@ -26,12 +26,17 @@ $(document).ready(function(){
       }else{
         display.text(display.text());
       }
-      console.log(display.text().length);
+      console.log(display.text);
   }
 
 
   function divide(){
-
+    console.log(result);
+    // var divideInput = parseFloat(display.text());
+    // display = 0;
+    // updateDisplay(display.text);
+    // var divideInputTwo = parseFloat(display.text);
+    // updateDisplay(divide(divideInputTwo));
   }
 
   function multiply(){
@@ -43,11 +48,22 @@ $(document).ready(function(){
   }
 
   function equal(){
-
+    var disText = display.text();
+    var num = parseFloat(disText);
+    if ( lastOperation === '+' ){
+      calculator.add(num);
+      var result = calculator.result();
+      display.text(result);
+      calculator.reset();
+    }
   }
 
   function plus(){
-
+    var disText = display.text();
+    var num = parseFloat(disText);
+    calculator.add(num);
+    display.text(0);
+    lastOperation = '+';
   }
 
   function clear(){
