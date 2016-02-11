@@ -1,4 +1,4 @@
-$(document).ready(function(){
+$(document).ready(function() {
   var calculator = Object.create(Calculator);
   var display = $('#display');
   var lastOperation = '';
@@ -17,19 +17,19 @@ $(document).ready(function(){
   $('mem-clear').on('click', memClear);
 
 
-  function updateDisplay(){
-      var numVal = $(this).text();
-      if (display.text() === '0'){
-        display.text(numVal);
-      }else if (display.text().length < 8) {
-        display.text(display.text() + numVal);
-      }else{
-        display.text(display.text());
-      }
+  function updateDisplay() {
+    var numVal = $(this).text();
+    if (display.text() === '0') {
+      display.text(numVal);
+    } else if (display.text().length < 8) {
+      display.text(display.text() + numVal);
+    } else {
+      display.text(display.text());
     }
+  }
 
 
-  function divide(){
+  function divide() {
     var disText = display.text();
     var num = parseFloat(disText);
     calculator.add(num);
@@ -37,7 +37,7 @@ $(document).ready(function(){
     lastOperation = 'divide';
   }
 
-  function multiply(){
+  function multiply() {
     var disText = display.text();
     var num = parseFloat(disText);
     calculator.add(num);
@@ -45,7 +45,7 @@ $(document).ready(function(){
     lastOperation = 'multiply';
   }
 
-  function subtract(){
+  function subtract() {
     var disText = display.text();
     var num = parseFloat(disText);
     calculator.add(num);
@@ -53,25 +53,25 @@ $(document).ready(function(){
     lastOperation = 'subtract';
   }
 
-  function equal(){
+  function equal() {
     var disText = display.text();
     var num = parseFloat(disText);
-    if ( lastOperation === 'multiply' ){
+    if (lastOperation === 'multiply') {
       calculator.multiply(num);
-    }else if ( lastOperation === 'add' ) {
+    } else if (lastOperation === 'add') {
       calculator.add(num);
-    }else if ( lastOperation === 'subtract' ) {
+    } else if (lastOperation === 'subtract') {
       calculator.subtract(num);
-    }else if ( lastOperation === 'divide' ) {
+    } else if (lastOperation === 'divide') {
       calculator.divide(num);
-  }
+    }
     var result = calculator.result();
     display.text(result);
     console.log(result);
     calculator.reset();
-    }
+  }
 
-  function add(){
+  function add() {
     var disText = display.text();
     var num = parseFloat(disText);
     calculator.add(num);
@@ -79,25 +79,25 @@ $(document).ready(function(){
     lastOperation = 'add';
   }
 
-  function clear(){
+  function clear() {
     calculator.reset();
     display.text(0);
     lastOperation = '';
   }
 
-  function memAdd(){
+  function memAdd() {
 
   }
 
-  function memSub(){
+  function memSub() {
 
   }
 
-  function memClear(){
+  function memClear() {
 
   }
 
-  function memDisplay(){
+  function memDisplay() {
 
   }
 
