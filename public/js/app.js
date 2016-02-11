@@ -64,14 +64,19 @@ $(document).ready(function() {
       calculator.subtract(num);
     } else if (lastOperation === 'divide') {
       calculator.divide(num);
-    // } else if (lastOperation === 'memAdd') {
-    //   calculator.memAdd(num);
-    // } else if (lastOperation === 'memSub') {
-    //   calculator.memSub(num);
-    // }
+    } else if (lastOperation === 'memAdd') {
+      calculator.memAdd(num);
+    } else if (lastOperation === 'memSub') {
+      calculator.memSub(num);
+    }
     var result = calculator.result();
-    display.text(result);
-    console.log(result);
+    var memDisplay = calculator.memDisplay();
+    if (lastOperation === 'multiply' || 'add' || 'subtract' || 'divide' ){
+      display.text(result);
+    } else if (lastOperation === ['memAdd' || 'memSub'] ) {
+      display.text(memDisplay);
+    }
+    console.log(result, memDisplay);
     calculator.reset();
   }
 
@@ -90,22 +95,18 @@ $(document).ready(function() {
   }
 
   function memAdd() {
-    var mem = calculator.memory();
     var disText = display.text();
-    mem += parseFloat(disText);
-    calculator.memDisplay();
-    // var disText = display.text();
-    // var num = parseFloat(disText);
-    // calculator.memAdd(num);
-    // display.text(0);
-    // lastOperation = 'memAdd';
+    var memNew = calculator.memory += parseFloat(disText);
+    display.text(0);
+    console.log(calculator.memory);
+    lastOperation = 'memAdd';
   }
 
   function memSub() {
     var disText = display.text();
-    var num = parseFloat(disText);
-    calculator.memAdd(num);
+    var memNew = calculator.memory -= parseFloat(disText);
     display.text(0);
+    console.log(calculator.memory);
     lastOperation = 'memSub';
   }
 
@@ -116,8 +117,8 @@ $(document).ready(function() {
   }
 
   function memDisplay() {
-    calculator.memDisplay();
-    display.text(memory)
+    var memDisplay = calculator.memDisplay();
+    display.text(memDisplay);
     lastOperation = 'memDisplay';
   }
 
