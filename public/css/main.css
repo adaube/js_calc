@@ -18,6 +18,21 @@ img {
   border-radius: 5px;
 }*/
 
+/*Make things spin
+#square {
+	-webkit-transform: perspective(300px) rotateX(25deg) rotate(45deg) ;
+    -moz-transform: perspective(300px) rotateX(25deg) rotate(45deg) ;
+    transform: perspective(300px) rotateX(25deg) rotate(45deg) ;
+    -moz-transition: all 3s;
+    transition: all 3s;
+}
+
+#square:hover {
+  	-webkit-transform: perspective(300px) rotateX(25deg) rotate(135deg) ;
+    -moz-transform: perspective(300px) rotateX(25deg) rotate(135deg) ;
+    transform: perspective(300px) rotateX(25deg) rotate(135deg) ;
+}*/
+
 .container {
   box-sizing: border-box;
   text-align: center;
@@ -36,7 +51,7 @@ img {
 
 #calculator-body {
   width: 24em;
-  padding: 10px;
+  padding: 18px;
   background-color: #303030;
   border: 5px ridge #edc233;
 }
@@ -78,6 +93,7 @@ img {
 	height: 100%;
 }
 
+
 .operator {
   background-color: #98a4a6;
   color: #edc233;
@@ -85,7 +101,7 @@ img {
 }
 
 .num {
-  background-color: #edc233;
+  background-color: ##98a4a6;
   color: #000000;
   border: 1px ridge #98a4a6;
 }

@@ -95,8 +95,7 @@ $(document).ready(function() {
   }
 
   function memAdd() {
-    var disText = display.text();
-    var memNew = calculator.memory += parseFloat(disText);
+    var memNew = calculator.memory += parseFloat(display.text());
     display.text(0);
     console.log(calculator.memory);
     lastOperation = 'memAdd';
